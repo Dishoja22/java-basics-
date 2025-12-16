@@ -1,0 +1,106 @@
+DAY 1
+import java.util.Scanner;
+
+public class MatrimonyCheck {
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Enter Gender (M/F): ");
+        char gender = sc.next().charAt(0);
+
+        System.out.print("Enter Age: ");
+        int age = sc.nextInt();
+
+        if (gender == 'M' || gender == 'm') {
+            if (age >= 21) {
+                System.out.println("Eligible for Matrimony");
+            } else {
+                System.out.println("Not Eligible for Matrimony");
+            }
+        } 
+        else if (gender == 'F' || gender == 'f') {
+            if (age >= 18) {
+                System.out.println("Eligible for Matrimony");
+            } else {
+                System.out.println("Not Eligible for Matrimony");
+            }
+        } 
+        else {
+            System.out.println("Invalid Gender");
+        }
+
+        sc.close();
+    }
+}
+#stars#
+public class StarSquare {
+    public static void main(String[] args) {
+
+        int n = 5;
+
+        for (int i = 1; i <= n; i++) {
+            for (int j = 1; j <= n; j++) {
+                if (i == 1 || i == n || j == 1 || j == n) {
+                    System.out.print("*");
+                } else {
+                    System.out.print(" ");
+                }
+            }
+            System.out.println();
+        }
+    }
+}
+#jargon #
+import java.util.Scanner;
+
+public class JaggedArrayExample {
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+
+        int[][] arr = new int[3][];
+
+        arr[0] = new int[2];
+        arr[1] = new int[3];
+        arr[2] = new int[4];
+
+        System.out.println("Enter elements:");
+
+        for (int i = 0; i < arr.length; i++) {
+            for (int j = 0; j < arr[i].length; j++) {
+                arr[i][j] = sc.nextInt();
+            }
+        }
+
+        System.out.println("Jagged Array Elements:");
+
+        for (int i = 0; i < arr.length; i++) {
+            for (int j = 0; j < arr[i].length; j++) {
+                System.out.print(arr[i][j] + " ");
+            }
+            System.out.println();
+        }
+
+        sc.close();
+    }
+}
+#hut stars printing#
+import java.util.Scanner;
+
+public class StarPattern {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Enter number of rows: ");
+        int n = sc.nextInt();
+
+        for (int i = 1; i <= n; i++) {
+            for (int j = 1; j <= (2 * i - 1); j++) {
+                System.out.print("*");
+            }
+            System.out.println();
+        }
+        sc.close();
+    }
+}
