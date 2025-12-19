@@ -1,0 +1,232 @@
+public class CalculatorSimulator extends Thread {
+
+    String empName;
+    boolean isIndian;
+    double empSal;
+
+    // Constructor
+    CalculatorSimulator(String empName, boolean isIndian, double empSal) {
+        this.empName = empName;
+        this.isIndian = isIndian;
+        this.empSal = empSal;
+    }
+
+    // Custom Exceptions
+    static class CountryNotValidException extends Exception {
+        CountryNotValidException(String msg) {
+            super(msg);
+        }
+    }
+
+    static class EmployeeNameInvalidException extends Exception {
+        EmployeeNameInvalidException(String msg) {
+            super(msg);
+        }
+    }
+
+    static class TaxNotEligibleException extends Exception {
+        TaxNotEligibleException(String msg) {
+            super(msg);
+        }
+    }
+
+    // Tax Calculation Method
+    double calculateTax(String empName, boolean isIndian, double empSal)
+            throws CountryNotValidException,
+                   EmployeeNameInvalidException,
+                   TaxNotEligibleException {
+
+        if (!isIndian) {
+            throw new CountryNotValidException(
+                    "The employee should be an Indian citizen for calculating tax");
+        }
+
+        if (empName == null || empName.trim().isEmpty()) {
+            throw new EmployeeNameInvalidException(
+                    "The employee name cannot be empty");
+        }
+
+        if (empSal > 100000) {
+            return empSal * 8 / 100;
+        } else if (empSal >= 50000 && empSal <= 100000) {
+            return empSal * 6 / 100;
+        } else if (empSal >= 30000 && empSal < 50000) {
+            return empSal * 5 / 100;
+        } else if (empSal >= 10000 && empSal < 30000) {
+            return empSal * 4 / 100;
+        } else {
+            throw new TaxNotEligibleException(
+                    "The employee does not need to pay tax");
+        }
+    }
+
+    // Thread execution
+    public void run() {
+        try {
+            double tax = calculateTax(empName, isIndian, empSal);
+            System.out.println("Tax amount is " + tax);
+        } catch (Exception e) {
+            e.printStackTrace();
+            System.out.println(e.getMessage());
+        }
+    }
+
+    // Main Method
+    public static void main(String[] args) {
+
+        // Test cases as threads
+        CalculatorSimulator t1 =
+                new CalculatorSimulator("Ron", false, 34000);
+
+        CalculatorSimulator t2 =
+                new CalculatorSimulator("Tim", true, 1000);
+
+        CalculatorSimulator t3 =
+                new CalculatorSimulator("Jack", true, 55000);
+
+        CalculatorSimulator t4 =
+                new CalculatorSimulator("", true, 30000);
+
+        // Start threads
+        t1.start();
+        t2.start();
+        t3.start();
+        t4.start();
+    }
+}
+
+
+
+
+#import java.util.Scanner;
+public class void main(String[]args){
+    System.out.println("addition task started");
+    Scanner s = new Scanner(System.in);
+    System.out.println("enter the first number");
+    Scanner s= new Scanner(System.in);
+    int sum= a+b;
+    System.out.println(sum);
+    System.out.println("Addition task completed");
+
+    System.out.println("------------------------------");
+    System.out.println("character printing started");
+    for(int i=65;i<=75;i++){
+        System.out.println((char)i);
+        try{
+            Thread.sleep(1000);
+        }
+        Catch(Exception e){
+            e.printStackTrace();
+        }
+    }
+    System.out.println("character printing task is completed");
+    System.out.println("=======================================");
+    System.out.println("Number printing is started");
+    for(int i = 1; i <=10 ; i++){
+        System.out.println(i);
+        try{
+            Thread.sleep(1000);
+        }
+        catch(Exception e){
+           e.printStackTrace();
+        }
+    }
+    System.out.println("number printing is completed");
+}
+}
+
+#
+day 4
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+
+        System.out.println("Enter the numerator:");
+        int a = sc.nextInt();
+
+        System.out.println("Enter the denominator:");
+        int b = sc.nextInt();
+
+        try {
+            int quotient = a / b;
+            System.out.println("Quotient: " + quotient);
+        } catch (ArithmeticException e) {
+            System.out.println("Cannot divide by zero!");//eprinststackrace//
+        }
+
+        sc.close();
+    }
+}
+
+
+
+
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+
+        System.out.println("Enter the numerator:");
+        int a = sc.nextInt();
+
+        System.out.println("Enter the denominator:");
+        int b = sc.nextInt();
+
+        try {
+            int quotient = a / b;
+            System.out.println("Quotient: " + quotient);
+        } catch (ArithmeticException e) {
+            System.out.println("Cannot divide by zero!");
+        } finally {
+           
+            System.out.println("Scanner closed.");
+        }
+    }
+}
+
+
+
+custom exception
+class ATM
+{
+    int acc_number=12345678;
+    int password= 1111;
+    int AN PWD;
+    void acceptInput()
+    {
+        Scanner s = new Scanner(System.in);
+        System.out.println("enter the account number:");
+        AN = s.nextInt();
+        System.out.println("enter the password :");
+        PWD = s.nextInt();
+    }
+    void verify()
+    {
+        if(acc_number == AN && password == PWD){
+            System.out.println("collect your money");
+        }
+        else{
+            System.out.println("invalid card details.Try again")
+        }
+    }
+}
+class Bank{
+    voiid initiate(){
+        ATM atm = new ATM();
+        atm.acceptInput();
+        atm.verify();
+        
+    }
+}
+public class ExampleForCustomExceptions{
+    public static void main(String[]args){
+        Bank b= new Bank();
+        b.initiate();
+    }
+}
+
