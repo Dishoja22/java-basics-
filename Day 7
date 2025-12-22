@@ -1,0 +1,280 @@
+/* LinkedHashSet:
+*predefined class ---->java.util
+*maintain the insertion order
+*jdk 1.4
+*/
+public class ExampleForLinkedHashSet{
+    public static void main(String[]args){
+        LinkedHashSet<Integer> lhs= newLinkedHashSet<Integer>();
+        lhs.add(10);
+        lhs.add(20);
+        lhs.add(40);
+        lhs.add(50);
+        System.out.println(lhs);
+        for(Object i :lhs);
+        System.out.println(i);
+    }
+}
+
+
+
+
+
+import java.util.LinkedHashSet;
+
+class Student {
+    private String rollNo;
+    private String name;
+    private String email;
+
+    
+    public Student(String rollNo, String name, String email) {
+        this.rollNo = rollNo;
+        this.name = name;
+        this.email = email;
+    }
+
+    public String getRollNo() {
+        return rollNo;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    
+        public String toString() {
+        return rollNo + " " + name + " " + email;
+    }
+}
+
+public class ExampleForLinkedHashSet {
+    public static void main(String[] args) {
+        Student s1 = new Student("A111", "SDS", "SDS@gmail.com");
+        Student s2 = new Student("A112", "Hari", "hari@gmail.com");
+
+        LinkedHashSet<Student> lhs = new LinkedHashSet<Student>();
+        lhs.add(s1);
+        lhs.add(s2);
+
+        for (Student i : lhs) {
+            System.out.println(i);
+        }
+    }
+}
+
+
+
+
+
+#import java.util.TreeSet;
+
+class Car implements Comparable<Car> {
+    int cost;
+
+    Car(int cost) {
+        this.cost = cost;
+    }
+
+    @Override
+    public String toString() {
+        return "Car[cost=" + cost + "]";
+    }
+
+    @Override
+    public int compareTo(Car c) {
+        return this.cost - c.cost; // ascending order
+    }
+}
+
+public class ExampleForComparable {
+    public static void main(String[] args) {
+        Car c1 = new Car(300);
+        Car c2 = new Car(100);
+        Car c3 = new Car(200);
+
+        TreeSet<Car> ts = new TreeSet<Car>();
+        ts.add(c1);
+        ts.add(c2);
+        ts.add(c3);
+
+        for (Car i : ts) {
+            System.out.println(i);
+        }
+    }
+}
+
+
+
+
+
+#import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
+
+/*
+ * Comparable is a predefined interface in java.lang package
+ * Comparable was introduced from JDK 1.2
+ * Comparable interface has an abstract method called compareTo()
+ * Comparable is used to compare objects and sort them
+ * Default sorting
+ */
+public class ExampleForComparator {
+    public static void main(String[] args) {
+
+        Student s1 = new Student("Kamala Hasan", "S111");
+        Student s2 = new Student("Rajini Kanth", "S110");
+        Student s3 = new Student("Shruthi Hasan", "S119");
+
+        ArrayList<Student> al = new ArrayList<Student>();
+        al.add(s1);
+        al.add(s2);
+        al.add(s3);
+
+        // Sort by Name
+        Collections.sort(al, new NameComparator());
+
+        System.out.println("Sorted by Name:");
+        for (Student s : al) {
+            System.out.println(s);
+        }
+
+        // Sort by Roll Number
+        Collections.sort(al, new RollNumberComparator());
+
+        System.out.println("\nSorted by Roll Number:");
+        for (Student s : al) {
+            System.out.println(s);
+        }
+    }
+}
+
+class NameComparator implements Comparator<Student> {
+
+    @Override
+    public int compare(Student o1, Student o2) {
+        return o1.getName().compareTo(o2.getName());
+    }
+}
+
+class RollNumberComparator implements Comparator<Student> {
+
+    @Override
+    public int compare(Student o1, Student o2) {
+        return o1.getRollNo().compareTo(o2.getRollNo());
+    }
+}
+
+class Student {
+    private String name;
+    private String rollNo;
+
+    public Student(String name, String rollNo) {
+        this.name = name;
+        this.rollNo = rollNo;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public String getRollNo() {
+        return rollNo;
+    }
+
+    @Override
+    public String toString() {
+        return name + " - " + rollNo;
+    }
+}
+
+
+
+package com.aits.day7;
+
+import java.util.LinkedHashMap;
+import java.util.Map;
+
+/*
+ * LinkedHashMap
+ * predefined class in java.util
+ * introduced in JDK 1.4
+ * insertion order is maintained
+ * underlying DS → HashTable + Doubly Linked List
+ */
+
+public class ExampleForLinkedHashMap {
+
+    public static void main(String[] args) {
+
+        Map<String, Object> lhm = new LinkedHashMap<String, Object>();
+
+        lhm.put("Name", "ABC");
+        lhm.put("Age", 21);
+
+        System.out.println(lhm);
+        System.out.println("------------------------");
+
+        
+        System.out.println(lhm.get("Name"));
+        System.out.println("-----------------------------");
+
+      
+        for (Object key : lhm.keySet()) {
+            System.out.println(key + " : " + lhm.get(key));
+        }
+
+        System.out.println("------------------------");
+        for(Object i : lhm.entrySet())
+{
+    System.out.println(i);
+}    }
+}
+
+
+
+package com.aits.day7;
+
+import java.util.Map;
+import java.util.TreeMap;
+
+/*
+ * TreeMap:
+ * predefined class in java.util package
+ * introduced in JDK 1.2
+ * maintains sorted order (sorting based on key in ascending order)
+ * underlying DS → Red-Black Tree
+ */
+
+public class ExampleForTreeMap {
+
+    public static void main(String[] args) {
+
+        TreeMap<String, String> tm = new TreeMap<String, String>();
+
+        tm.put("Name", "pavan");
+        tm.put("Email", "pavan@gmail.com");
+
+        System.out.println("---------------------------");
+
+        // Iterating using keySet()
+        for (String key : tm.keySet()) {
+            System.out.println(key + " : " + tm.get(key));
+        }
+
+        System.out.println("---------------------------");
+        System.out.println(tm);
+
+        System.out.println("---------------------------");
+
+        // Iterating using entrySet()
+        for (Map.Entry<String, String> entry : tm.entrySet()) {
+            System.out.println(entry.getKey() + " = " + entry.getValue());
+        }
+    }
+}
+
