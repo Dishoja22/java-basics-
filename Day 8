@@ -1,0 +1,142 @@
+CREATE TABLE Student (
+  studentid VARCHAR(10) PRIMARY KEY,
+  firstname varchar(20) not null,
+  lastname  varchar(20) not null,
+  DOB dateTime not null,
+  gender varchar(10) not null,
+  Email varchar(30) unique not null,
+  phonenumber varchar(10) not null);
+
+
+
+DBMS:
+Data Base Management System:
+
+ A DBMS is system software for creating and managing databases.
+
+DATABASE--->
+A databse is an organized collection of structured information or data,typically stored electronically in a database.
+
+Features:
+
+1.Structured data
+2.Efficient data retrieval
+3.Data integrity
+4.Data relationship
+5.Security
+6.ACID properties
+
+Types of databases:
+
+1.Relational database:
+Organize data into structures tables with predefined schemas.e
+Example-->MYSQL, PostgreSQL etc
+
+2.NoSQL database : Designed for unstructured or semi structured data and provide more efficiency.
+example--> MongoDB
+
+3.In - memory database--->Store data in the computer main memory(Ram)foe extremely fast data access.
+
+SQL--->
+
+Sql is used with RDBMS such as MYSQL, PostgreSQL, Oracle.
+Sql commands--->SQL commands are instructions.It is used to communicate with the database.
+--->It is use to perform specific task, Funnction.
+--->SQL can perform various operations like create a table,add data table,drop a table, modify the table , set permissions for users.
+
+
+
+Types of SQL commands--->
+DDL(Data definition language)
+-create
+-Drop
+-Alter
+-Truncate
+
+DML(Data manipulation language)
+-Insert
+-Update
+-Delete
+
+DCL(Data control Language)
+-Grant
+-Revoke
+
+TCL(Transaction control language)
+-Commit
+-RollBack
+-Save point
+
+DQL(Data query Language )
+-Select
+
+
+
+
+
+
+data base commands:
+use aits;
+create database;
+create table student(
+ 	-studentId VARCHAR(10) PRIMARY KEY,
+ 	-FirstName VARCHAR(25) NOT NULL,
+ 	-LastName VARCHAR(15) NOT NULL,
+ 	-DateOfBirth DataTime NOT Null,
+ 	-Gender VARCHAR(15) NOT NULL,
+ 	-Email VARCHAR(30) UNIQUE NOT NULL,
+ 	-Phone VARCHAR(10) NOT NULL
+);
+
+
+SQL is the specialized language for woring with relational databases allowing task line data query insertion update and deletion
+*primary key:
+it is a unique identifier for each record in a data base table ensuring uniqueness and enabling efficient data retrieval.it is crucial part of maintaining data integrity and faciliatating queries.
+*Foreign Key:
+A foreign key is a column or a set of column that establishes link between two tables in a relational databases
+
+A foreign key in one table refers to the primary key in another table creating the relationship between them.
+
+
+
+CLAUSE
+insql a clause is a specifiv  a sql statement that defines various aspects of the query
+
+Select *from clientmaster where clientno='205';
+
+
+
+
+
+
+create table instructor(
+  InstructorID Varchar(10) Primary key,
+  email Varchar(30) unique not null,
+  Firstname Varchar(20) not null,
+  Lastname Varchar(15) not null
+);
+insert into instructor values('101','sohii@gmail.com','sai','sweety'),
+ 							 ('102','dishu@gmail.com','dishu','sss');
+
+
+
+select*from score where CreditObtained>3;
+
+
+
+select *from score where CreditObtained>3 and courseid='c103';
+
+
+
+
+
+
+create table course(
+  courseId varchar(12) primary key,
+  courseTitle varchar(20) not null,
+  credits int not null
+);
+
+
+insert into course(courseId,courseTitle,credits)
+values('c1','java',3),('c2','python',3),('c3','c++',3);
