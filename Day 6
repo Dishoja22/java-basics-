@@ -1,0 +1,450 @@
+import java.util.List;
+import java.util.ArrayList;
+
+class ExampleForCollection {
+    public static void main(String[] args) {
+
+        List<Integer> l = new ArrayList<>();
+        l.add(10);
+        l.add(20);
+        l.add(30);
+        l.add(40);
+
+        System.out.println("List: " + l);
+        System.out.println("Size of list: " + l.size());
+        System.out.println("List contains 20? " + l.contains(20));
+        System.out.println("Element at index 2: " + l.get(2));
+        System.out.println("Last element: " + l.get(l.size() - 1));
+
+        System.out.println("------------------------------------");
+
+        ArrayList<Integer> al = new ArrayList<>();
+        al.add(40);
+        al.add(60);
+        al.add(45);
+        al.add(90);
+
+        System.out.println("ArrayList: " + al);
+        System.out.println("Size of ArrayList: " + al.size());
+        System.out.println("Last element of ArrayList: " + al.get(al.size() - 1));
+    }
+}
+
+
+
+
+
+
+---> EXAMPLE FOR ARRAY LIST 
+
+
+package day6;
+import java.util.ArrayList;
+public class ExampleForArrayList {
+
+	public static void main(String[] args) {
+		
+		Student s1=new Student("akhila",21);
+		Student s2=new Student("anu",20);
+		ArrayList al=new ArrayList();
+		al.add(s1);
+		al.add(s2);
+		for(Object i:al)
+		{
+			System.out.println(i);
+		}
+
+	}
+
+}
+
+
+class Student {
+	private String name;
+	private int age ;
+	public String getName()
+	{
+		return name;
+	}
+	public void setName(String name)
+	{
+		this.name=name;
+	}
+	public int  getAge()
+	{
+		return age;
+	}
+	public void setAge(String name )
+	{
+		this.age=age;
+	}
+	public Student(String name,int age)
+	{
+		super();
+		this.name=name;
+		this.age=age;
+	}
+}
+
+
+
+
+
+---->LINKEDLISTS
+
+
+
+package day6;
+import java.util.ArrayList;
+public class ExampleForLinkedList {
+
+	public static void main(String[] args) {
+		
+	List l = new LinkedList();
+	l.add("java");
+	l.add(10);
+	l.add(35,5);
+	l.add(23);
+	l.add(null);
+	
+	System.out.println("The List: " + i);
+	
+	for(Object i : i)
+	{
+	    System.out.println(i);
+	}
+	System.out.println(l.get(0));
+	
+	System.out.println(l.isEmpty());
+	
+	System.out.println("---------------------------------");
+	
+	LinkedList.ll = new LinkedList();
+	ll.add(10);
+	ll.add(20);
+	ll.add("cb");
+	
+	System.out.println("The LinkedList iss :" +ll);
+	
+	for(Object i :l)
+	{
+	    System.out.println(i);
+	}
+	System.out.println(l.get(0));
+	
+	
+	
+	
+	-------> LINKEDLIST EXAMPLES
+
+
+
+
+import java.util.LinkedList;
+
+public class ExampleForLinkedList {
+    public static void main(String[] args) {
+
+        Employee e1 = new Employee("v", "t", "v@mail.com");
+        Employee e2 = new Employee("s", "ss", "s@mail.com");
+        Employee e3 = new Employee("d", "sds", "sds@mail.com");
+
+        LinkedList<Employee> ll = new LinkedList<>();
+        ll.add(e1);
+        ll.add(e2);
+        ll.add(e3);
+
+        for (Employee emp : ll) {
+            System.out.println(emp);
+        }
+    }
+}
+
+class Employee {
+    private String empName;
+    private String empDestination;
+    private String empEmail;
+
+    // Constructor
+    public Employee(String empName, String empDestination, String empEmail) {
+        this.empName = empName;
+        this.empDestination = empDestination;
+        this.empEmail = empEmail;
+    }
+
+    // Getters
+    public String getEmpName() {
+        return empName;
+    }
+
+    public String getEmpDestination() {
+        return empDestination;
+    }
+
+    public String getEmpEmail() {
+        return empEmail;
+    }
+
+    // toString method
+    @Override
+    public String toString() {
+        return "Employee [empName=" + empName +
+               ", empDestination=" + empDestination +
+               ", empEmail=" + empEmail + "]";
+    }
+}
+
+
+
+
+-----> //AutoBoxing
+
+int a = 10;
+Integer i = new Integer(a);
+
+-----> //AutoUnboxing
+
+Integer in = new Integer(10);
+int b = in;
+
+
+----->VECTOR
+
+import java.util.Vector;
+
+public class ExampleForVector{
+     public static void main(String[]args){
+         
+         Vector<String> v = new Vector();
+         
+         v.add("JAVA SCRIPT");
+         v.add("php");
+         v.add("dart");
+         v.add("JAVA");
+         
+         System.out.println(v);
+         
+         System.out.println("-------------------------");
+         
+         System.out.println(v.get(2));
+         
+         System.out.println("--------------------------");
+         
+         System.out.println(v.isEmpty());
+         
+         System.out.println("--------------------------");
+         
+         System.out.println(v.contains(2));
+         
+         System.out.println("---------------------------");
+         
+         System.out.println(v.size());
+         
+         System.out.println("--------------------------");
+         
+         for(Object i : v)
+         {
+             System.out.println(i);
+         }
+         
+     }
+}
+
+
+import java.util.Vector;
+
+public class ExampleForVector{
+     public static void main(String[]args){
+         
+         Vector<String> v = new Vector();
+         
+         v.add("JAVA SCRIPT");
+         v.add("php");
+         v.add("dart");
+         v.add("JAVA");
+         
+         System.out.println(v);
+         
+         System.out.println("-------------------------");
+         
+         System.out.println(v.get(2));
+         
+         System.out.println("--------------------------");
+         
+         System.out.println(v.isEmpty());
+         
+         System.out.println("--------------------------");
+         
+         System.out.println(v.contains(2));
+         
+         System.out.println("---------------------------");
+         
+         System.out.println(v.size());
+         
+         System.out.println("--------------------------");
+         
+         for(Object i : v)
+         {
+             System.out.println(i);
+         }
+         
+     }
+}
+
+
+
+
+---->VECTOR EXAMPLE
+
+import java.util.Vector;
+
+class Car {
+    private String brand;
+    private String model;
+    private int year;
+
+    // Constructor
+    public Car(String brand, String model, int year) {
+        this.brand = brand;
+        this.model = model;
+        this.year = year;
+    }
+
+    // toString method
+    @Override
+    public String toString() {
+        return "Car [brand=" + brand + ", model=" + model + ", year=" + year + "]";
+    }
+}
+
+public class ExampleForVector {
+    public static void main(String[] args) {
+
+        Vector<Car> v = new Vector<>();
+
+        Car c1 = new Car("Toyota", "Camry", 2020);
+        Car c2 = new Car("Honda", "Civic", 2019);
+        Car c3 = new Car("Tesla", "Model 3", 2022);
+
+        v.add(c1);
+        v.add(c2);
+        v.add(c3);
+
+        // Print all cars
+        System.out.println(v);
+
+        System.out.println("-------------------------");
+
+        // Get element at index 1
+        System.out.println(v.get(1));
+
+        System.out.println("--------------------------");
+
+        // Check if vector is empty
+        System.out.println(v.isEmpty());
+
+        System.out.println("--------------------------");
+
+        // Check if vector contains an object
+        System.out.println(v.contains(c2));
+
+        System.out.println("---------------------------");
+
+        // Size of vector
+        System.out.println(v.size());
+
+        System.out.println("--------------------------");
+
+        // Iterate using for-each
+        for (Car car : v) {
+            System.out.println(car);
+        }
+    }
+}
+
+
+
+
+----> SETS AND ITS TYPES
+
+
+
+
+
+    /* Set:
+    -> Pre-defined interface-->java.util
+    -> jdk 1.2
+    -> implementation classes --> HashSet,LinkedHashSet,TressSet
+    Specifications:
+    
+    -> Insertion order will not be maintained
+    -> Duplication are not allowed
+    -> Not IndexBased
+    -> Null values can be Stored
+    
+    1. HashSet:
+    --------------------
+    -> its a pre-Defined class which is present inside java.util-->jdk 1.2
+    -> UnderLined DataStructure --> HashTable
+    -> initial capacity-->16
+    -> Fill ratio/ load factor --> 75%--> 16+12
+    
+    */
+    import java.util.*;
+    public class ExampleForSet{
+        public static void main(String[]args){
+            /*Set s = new HashSet();
+            Set s = new LinkedHashSet();
+            Set s = new TreeSet();*/
+            
+            HashSet<Object> hs = new HashSet();
+            hs.add(10);
+            hs.add("java");
+            hs.add("python");
+            
+            System.out.println(hs);
+            
+            System.out.println("-------------");
+            
+            System.out.println(hs.size());
+            
+            System.out.println("-------------");
+            
+            System.out.println(hs.isEmpty());
+            
+            System.out.println("---------------");
+            
+            System.out.println(hs.clone());
+            
+            System.out.println("---------------");
+            
+            for(Object i : hs)
+            {
+                
+                System.out.println(i);
+            }
+            
+    
+        
+    }
+}
+
+
+
+--> THIS CODE IS INCOMPLETE ......
+
+
+public class ExampleForHashSet {
+    
+    public static void main(String[]args) {
+        Dog d = new Dog("buddy","lab");
+        
+        HashSet hs = new HashSet();
+        hs.add(d);
+        
+        for(Object e : hs)
+        {
+            System.out.println(e);
+        }
+    }
+}
